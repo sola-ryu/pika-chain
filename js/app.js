@@ -10,6 +10,11 @@
     jigglypuff: "corpus/jigglypuff.json",
   };
 
+  let chain = {};
+  let seeds = [];
+  let order = 1;
+  let currentSpecies = null;
+
   const CORPUS_NAMES = {
     pikachu: "⚡ Pikachu",
     charmander: "🔥 Charmander",
