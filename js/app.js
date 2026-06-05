@@ -48,7 +48,7 @@
         ch[ngram].push(tokens[i + order]);
       }
     }
-    return ch;
+    return { chain: ch, seeds };
   }
 
   function generate() {
@@ -93,7 +93,9 @@
       const resp = await fetch(CORPUS_URLS[species]);
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const texts = await resp.json();
-      chain = buildChain(texts);
+      const result = buildChain(texts);
+      chain = result.chain;
+      seeds = result.seeds;
       corpusInfo.textContent = `${CORPUS_NAMES[species]} — ${texts.length} samples, ${Object.keys(chain).length} states`;
     } catch (err) {
       corpusInfo.textContent = `Error loading corpus: ${err.message}`;
