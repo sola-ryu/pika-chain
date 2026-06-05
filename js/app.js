@@ -4,11 +4,10 @@
 (function () {
   "use strict";
 
-  const REPO = "sola-ryu/pika-chain";
   const CORPUS_URLS = {
-    pikachu: `https://raw.githubusercontent.com/${REPO}/gh-pages/corpus/pikachu.json`,
-    charmander: `https://raw.githubusercontent.com/${REPO}/gh-pages/corpus/charmander.json`,
-    jigglypuff: `https://raw.githubusercontent.com/${REPO}/gh-pages/corpus/jigglypuff.json`,
+    pikachu: "corpus/pikachu.json",
+    charmander: "corpus/charmander.json",
+    jigglypuff: "corpus/jigglypuff.json",
   };
 
   const CORPUS_NAMES = {
