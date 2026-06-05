@@ -157,6 +157,65 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* ── Translation toggle ─────────────────────────────────── */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  padding-left: 0.5rem;
+}
+
+.toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1a1a2e;
+  border: 1px solid #0f3460;
+  color: #888;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.toggle-switch::before {
+  content: "🌐";
+  font-size: 0.85rem;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.toggle-label input:checked + .toggle-switch {
+  background: linear-gradient(135deg, rgba(247, 217, 78, 0.15), rgba(255, 107, 53, 0.15));
+  border-color: #f7d94e;
+  color: #f7d94e;
+}
+
+.toggle-label input:checked + .toggle-switch::before {
+  opacity: 1;
+}
+
+.output.translated {
+  color: #8be9fd;
+}
+
+.output.translated .raw {
+  display: none;
+}
+
+.output.translated .translated-text {
+  display: block;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 500px) {
   body { padding: 1rem 0.5rem; }
